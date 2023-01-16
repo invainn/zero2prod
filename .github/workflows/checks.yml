@@ -74,6 +74,9 @@ jobs:
   clippy:
     name: Clippy
     runs-on: ubuntu-latest
+    env:
+      SQLX_VERSION: 0.6.2
+      SQLX_FEATURES: "rustls,postgres"
     steps:
       - uses: actions/checkout@v3
       - uses: actions-rs/toolchain@v1
@@ -109,6 +112,9 @@ jobs:
   coverage:
     name: Code coverage 
     runs-on: ubuntu-latest
+    env:
+      SQLX_VERSION: 0.6.2
+      SQLX_FEATURES: "rustls,postgres"
     steps:
       - uses: actions/checkout@v3
       - uses: actions-rs/toolchain@v1

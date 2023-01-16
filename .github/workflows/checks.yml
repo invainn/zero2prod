@@ -39,7 +39,7 @@ jobs:
             ~/.cargo/bin/sqlx
           key: ${{ runner.os }}-sqlx-${{ env.SQLX_VERSION }}
       - uses: actions-rs/cargo@v1
-        if: steps.cache-sqlx.outputs.cache-hit == false
+        if: steps.cache-sqlx.outputs.cache-hit != 'true'
         with:
           command: install
           args: >
@@ -91,7 +91,7 @@ jobs:
             ~/.cargo/bin/sqlx
           key: ${{ runner.os }}-sqlx-${{ env.SQLX_VERSION }}
       - uses: actions-rs/cargo@v1
-        if: steps.cache-sqlx.outputs.cache-hit == false
+        if: steps.cache-sqlx.outputs.cache-hit != 'true'
         with:
           command: install
           args: >
@@ -128,7 +128,7 @@ jobs:
             ~/.cargo/bin/sqlx
           key: ${{ runner.os }}-sqlx-${{ env.SQLX_VERSION }}
       - uses: actions-rs/cargo@v1
-        if: steps.cache-sqlx.outputs.cache-hit == false
+        if: steps.cache-sqlx.outputs.cache-hit != 'true'
         with:
           command: install
           args: >
